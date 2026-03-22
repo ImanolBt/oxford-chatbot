@@ -405,3 +405,702 @@ body {
   .hero-title { font-size: 2rem; }
   .feature-card { font-size: 0.8rem; padding: 0.5rem 0.75rem; }
 }
+/* ═══ BOTONES HERO ═══ */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 0.85rem 2rem;
+  background: white;
+  color: var(--primary);
+  border: none;
+  border-radius: 50px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.7);
+}
+
+.btn-center {
+  display: block;
+  margin: 2.5rem auto 0;
+  background: var(--primary);
+  color: white;
+}
+
+.btn-center:hover {
+  background: var(--primary-dark);
+}
+
+/* ═══ SUBTÍTULO INFO ═══ */
+.info-subtitle {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  margin-top: -1.5rem;
+}
+
+/* ═══ TEMAS ═══ */
+.topics-section {
+  padding: 4rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.topic-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.topic-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.topic-card h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.topic-card p {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ═══ SECCIÓN CHAT ═══ */
+.chat-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.white {
+  color: white;
+}
+
+.chat-section-sub {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* ═══ RESPONSIVE EXTRA ═══ */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .topic-card {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .topic-icon {
+    font-size: 1.8rem;
+  }
+}
+/* ═══ INSTALACIONES ═══ */
+.facilities-section {
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.croquis-container {
+  margin: 0 auto 3rem;
+  max-width: 680px;
+}
+
+.croquis {
+  background: #f0f4e8;
+  border: 3px solid #8b9a6b;
+  border-radius: 24px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: inset 0 0 30px rgba(139,154,107,0.15), 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.croquis-calle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+}
+
+.croquis-calle span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+.calle-linea {
+  flex: 1;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #9ca3af 0px, #9ca3af 12px, transparent 12px, transparent 20px);
+}
+
+.croquis-entrada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.entrada-puerta {
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(180deg, #7c3aed, #6d28d9);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(109,40,217,0.3);
+}
+
+.puerta-icon { font-size: 1.3rem; }
+
+.entrada-texto {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #4c1d95;
+  letter-spacing: 0.1em;
+}
+
+.entrada-flecha {
+  color: #7c3aed;
+  font-size: 0.9rem;
+  animation: bounce-arrow 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.croquis-ingreso {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.ingreso-item {
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  transition: transform 0.2s;
+}
+
+.ingreso-item:hover { transform: scale(1.03); }
+
+.dece-box {
+  background: linear-gradient(135deg, #fecaca, #fca5a5);
+  border: 2px solid #ef4444;
+  box-shadow: 0 2px 8px rgba(239,68,68,0.2);
+}
+
+.bar-box {
+  background: linear-gradient(135deg, #d9f99d, #bef264);
+  border: 2px solid #65a30d;
+  box-shadow: 0 2px 8px rgba(101,163,13,0.2);
+}
+
+.ingreso-centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patio-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.patio-text {
+  font-size: 0.65rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.room-icon-lg { font-size: 1.5rem; }
+
+.room-name-lg {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #1e293b;
+}
+
+.room-detail-lg {
+  font-size: 0.65rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.room-piso {
+  font-size: 0.6rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 0.1rem;
+}
+
+.edificio {
+  border: 3px solid #475569;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f8fafc;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.edificio-header {
+  background: linear-gradient(135deg, #334155, #475569);
+  color: white;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.piso {
+  padding: 0.75rem;
+}
+
+.piso-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.piso-num {
+  width: 24px;
+  height: 24px;
+  background: #1a56db;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.piso-label span:last-child {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.piso-rooms {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.aula-room {
+  flex: 1;
+  padding: 0.85rem 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: transform 0.2s;
+  cursor: default;
+}
+
+.aula-room:hover { transform: scale(1.04); }
+
+.aula-a {
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  border: 2px solid #3b82f6;
+}
+
+.aula-b {
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  border: 2px solid #3b82f6;
+}
+
+.aula-c {
+  background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
+  border: 2px solid #6366f1;
+}
+
+.aula-d {
+  background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
+  border: 2px solid #8b5cf6;
+}
+
+.lab-room {
+  background: linear-gradient(135deg, #a5f3fc, #67e8f9);
+  border: 2px solid #06b6d4;
+}
+
+.aula-letra {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #1e293b;
+  line-height: 1;
+}
+
+.lab-icon { font-size: 1.4rem; }
+
+.aula-nombre {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #1e293b;
+  text-align: center;
+}
+
+.piso-pasillo-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0 0.25rem;
+}
+
+.escalera-icon { font-size: 1.2rem; }
+
+.escalera-text {
+  font-size: 0.6rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.piso-separador {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0 0.75rem;
+}
+
+.separador-linea {
+  flex: 1;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #94a3b8 0px, #94a3b8 8px, transparent 8px, transparent 14px);
+}
+
+.pasillo-canchas {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+}
+
+.pasillo-texto {
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.pasillo-dots {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pasillo-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #9ca3af;
+}
+
+.canchas-area {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0.5rem;
+}
+
+.cancha-futbol {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border: 2px solid #16a34a;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancha-lineas {
+  position: absolute;
+  inset: 8px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 4px;
+}
+
+.cancha-circulo {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cancha-porteria-top {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-top: none;
+}
+
+.cancha-porteria-bottom {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-bottom: none;
+}
+
+.cancha-basquet {
+  background: linear-gradient(135deg, #fdba74, #fb923c);
+  border: 2px solid #ea580c;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basquet-lineas {
+  position: absolute;
+  inset: 8px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+}
+
+.basquet-circulo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cancha-info {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.cancha-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.cancha-nombre {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.croquis-legend-v2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.legend-v2-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.legend-v2-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.gallery-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f2b5e;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-color: #1a56db;
+}
+
+.gallery-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-card h4 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+}
+
+.gallery-card p {
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .croquis-ingreso {
+    grid-template-columns: 1fr;
+  }
+
+  .ingreso-centro { display: none; }
+
+  .piso-rooms {
+    flex-direction: column;
+  }
+
+  .canchas-area {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .gallery-card { padding: 1rem 0.75rem; }
+  .gallery-icon { font-size: 2rem; }
+}
