@@ -310,7 +310,34 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+{/* DOCENTES */}
+      <section className="docentes-section">
+        <div className="docentes-content">
+          <div className="docentes-text">
+            <div className="docentes-badge">🎓 Nuevo en Oxford?</div>
+            <h2 className="docentes-title">¿Eres docente de nuevo ingreso?</h2>
+            <p className="docentes-desc">
+              OxBot también tiene un modo especial para docentes. Consulta sobre la metodología ERCA, 
+              sistema de evaluación, planificaciones, plataformas institucionales, contactos importantes 
+              y tips para tu primer año en la Unidad Educativa Oxford.
+            </p>
+            <div className="docentes-features">
+              <span>📘 Metodología ERCA</span>
+              <span>📊 Evaluaciones</span>
+              <span>📋 Planificaciones</span>
+              <span>💻 Odoo y Moodle</span>
+            </div>
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("openChat", { detail: { mode: "docente" } }));
+              }}
+              className="btn-docente"
+            >
+              🎓 Abrir OxBot para Docentes
+            </button>
+          </div>
+        </div>
+      </section>
       {/* SECCIÓN DEL CHAT */}
       <section id="chat-section" className="chat-section">
         <h2 className="info-title white">Chatea con OxBot</h2>

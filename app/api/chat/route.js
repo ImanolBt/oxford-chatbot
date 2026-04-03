@@ -1,9 +1,9 @@
 // app/api/chat/route.js
-import { findAnswer } from "../../../lib/knowledge";
+import { findAnswer, findDocenteAnswer } from "../../../lib/knowledge";
 
 export async function POST(request) {
   try {
-    const { message } = await request.json();
+    const { message, mode } = await request.json();
 
     if (!message || typeof message !== "string") {
       return Response.json(
@@ -12,7 +12,8 @@ export async function POST(request) {
       );
     }
 
-    const result = findAnswer(message);
+    // Usar buscador según el modo
+    const result = mode === "docente" ? findDocenteAnswer(message) : findAnswer(message);
 
     return Response.json({
       response: result.answer,
@@ -21,8 +22,7 @@ export async function POST(request) {
   } catch (error) {
     console.error("Error:", error);
     return Response.json({
-      response:
-        "😅 Algo salió mal. Intenta de nuevo o reformula tu pregunta.",
+      response: "😅 Algo salió mal. Intenta de nuevo o reformula tu pregunta.",
       found: false,
     });
   }
